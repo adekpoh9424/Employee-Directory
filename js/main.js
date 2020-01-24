@@ -3,12 +3,13 @@ let index;
 let card;
 let container;
 
+const gridContainer = document.querySelector('.main-container')
 const modalContent = document.getElementsByClassName('modal-content');
 const  search = document.getElementById('search');
 const overlay = document.querySelector('.overlay');
 const modalClose = document.querySelector('.modal-close');
 const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('right-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 const modalInfo = document.querySelector('.modal-info');
 const employeeContainer = document.querySelector('.employee-container');
 const modalM = document.getElementById('modalM');

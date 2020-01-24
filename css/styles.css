@@ -13,7 +13,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.grid-container {
+.employee-container {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -185,7 +185,7 @@ p {
 /* Media Query */
 
 @media (min-width: 768px) {
-    main {
+    .employee-container {
         width: 95%;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -195,6 +195,7 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .avatar {
         width: auto;
         float: left;
@@ -202,27 +203,93 @@ p {
         width: 40%;
     }
 
+    .modal-avatar {
+        width: 50%;
+        margin: 10px;
+    }
+
+    .text-container {
+        margin-top: 20px;
+    }
+
+    .name {
+        font-size: 1.1em;
+    }
+
+    .name,
+    .email,
+    .address {
+        margin: 5px 10px;
+        text-align: left;
+    }
+
+    .email,
+    .address {
+        font-size: 0.8em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+
     .card {
         padding: 20px;
         margin-bottom: 35px;
         overflow: auto;
         margin: 10px auto;
-        width: 90%;
+        width: 95%;
+        transition-duration: 1s;
     }
 
+    .card:hover {
+        transform: scale(1.05);
+        background-color: #ececec;
+    }
     
 }
 
 
 
-
-
 @media (min-width: 1024px) {
-    main {
+    .employee-container {
         margin: 50px auto 10px;
         flex-wrap: wrap;
         justify-content: space-between;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .card {
+        margin: 20px;
+        padding: 10px;
+        transition-duration: 1s;
+    }
+
+    .text-container {
+        margin-top: 30px;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+
+    .avatar {
+        width: 30%;
+        margin: 10px;
+    }
+
+    .modal-avatar {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .modal {
+        width: 475px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        background-color: #ececec;
+    }
+
 }
