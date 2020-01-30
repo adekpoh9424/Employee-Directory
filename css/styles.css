@@ -33,8 +33,7 @@ main {
 }
 
 .overlay {
-    position: relative;
-
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -43,19 +42,20 @@ main {
 }
 
 .modal {
-    width: 375px;
+    width: 300px;
     margin: 15% auto auto;
     position: relative;
     text-align: center;
     background: #fff;
-    border: 1px solid
-
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 15px;
 }
 
-.model-close {
+.modal-close {
     position: absolute;
     right: 15px;
-    top: 50px;
+    top: 5px;
     cursor: pointer;
     border: none;
     font-size: 20px;
@@ -110,19 +110,6 @@ main {
     border: none;
 }
 
-/*.card {
-    margin: 20px 1%;
-    width: 80%;
-    height: 120px;
-    border: 2px solid grey;
-    border-radius: 10px;;
-    display: flex;
-    align-items: center;
-    flex-wrap: flex;
-    transition-duration: 1s;
-
-}
-*/
 
 .card {
     width: 80%;
@@ -284,7 +271,7 @@ p {
     }
 
     .modal {
-        width: 475px;
+        width: 350px;
     }
 
     .card:hover {
