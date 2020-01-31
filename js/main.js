@@ -3,8 +3,8 @@ let index;
 let card;
 let container;
 
-const gridContainer = document.querySelector('.main-container')
-const modalContent = document.getElementsByClassName('modal-content');
+const gridContainer = document.querySelector('.main-container');
+const modalContent = document.querySelector('.modal-content');
 const  search = document.getElementById('search');
 const overlay = document.querySelector('.overlay');
 const modalClose = document.querySelector('.modal-close');
@@ -70,7 +70,7 @@ function displayModal(index) {
         `;
 
         overlay.classList.remove("hidden");
-        modalM.innerHTML = modalHTML;
+        modalContent.innerHTML = modalHTML;
 
 }
 
@@ -92,7 +92,7 @@ modalClose.addEventListener('click', () => {
 rightArrow.addEventListener('click', (e) => {
     const modalInfo = document.querySelector('.modal-info');
     const index = modalInfo.getAttribute('data-index');
-    const prevIndex = parseInt(index) +1;
+    const nextIndex = parseInt(index) +1;
     if (index < 12) {
         displayModal(nextIndex);
     }
@@ -109,22 +109,19 @@ leftArrow.addEventListener('click', (e) => {
 
 //Search 
 
-search.addEventListener('keyup', e => {
-    const searchInput = e.target.value.toLowercase();
-    const names = document.querySelectorAll('.name');
-    console.log(searchInput);
-    for (let i = 0; i < names.length; i++) {
-        const name = names[i].textContent.toLowerCase();
-        const text = names[i].parentElement;
-        const cards = text.parentElement;
-        if (name.toLowerCase().indexOf(searchInput) > -1) {
-            cards.style.display = "flex";
-            modalContent.style.display = "block";
-            modalM.style.display = "block";
-        } else {
-            cards.style.display = "none";
-            modalM.style.display = "block";
-            modalContent.style.display = "block";
+search.addEventListener('keyup', function(){
+    let iSearch = event.target.value.toLowerCase();
+    let a, txt;
+    for (let i = 0; i < document.querySelectorAll('[class*="card"]').length; i++){
+        a = document.querySelectorAll('[class*="card"]') [i];
+        txt = a.querySelector(".name").textContent;
+        if(txt.toLocaleLowerCase().indexOf(iSearch) > -1){
+            a.classList.remove("hidden");
         }
+        else
+        {
+            a.classList.add("hidden");
     }
+}
+
 });
